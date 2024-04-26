@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <title>岗位信息管理</title>
+
+    <link rel="shortcut icon" th:href="favicon.ico">
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/css/font-awesome.css}" rel="stylesheet">
+    <link th:href="@{/css/animate.css}" rel="stylesheet">
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+<body  class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+<div id="wrapper">
+    <span th:replace="Component/nav_Component::nav"></span>
+    <div id="page-wrapper" class="gray-bg ">
+        <body  class="row J_mainContent" id="content-main">
+        <div class="gray-bg">
+
+            <div >
+                <div class="row">
+                    <div class="col-sm-12">
+
+                        <div class="ibox">
+                            <div class="ibox-title">
+                            </div>
+                            <div class="ibox-content">
+                                <div class="row m-b-sm m-t-sm">
+                                    <div class="row col-md-12">
+                                        <div class="col-md-2">
+                                            <a th:href="@{/position/toPositionManager}" type="button" id="loading-example-btn" class="btn btn-white btn-sm"><i class="fa fa-refresh"></i>&nbsp;刷新</a>
+                                        </div>
+                                    </div>
+                                    <div class="row col-md-12" >&nbsp;</div>
+                                    <div class="row col-md-12">
+                                        <form th:action="@{/position/PositionSelect}">
+                                            <div class="col-md-12">
+
+                                                <div class="input-group col-md-3">
+                                                    <input  type="text" name="xzy" placeholder="请输入专业" class="input-sm form-control">
+                                                </div>
+
+                                                <div class="input-group col-md-3">
+                                                  <span class="input-group-btn">
+                                                <button type="submit" class="btn btn-sm btn-primary"> 搜索</button> </span>
+                                                </div>
+
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                </div>
+
+                                <div class="project-list">
+
+                                    <table class="table table-hover">
+
+                                        <thead>
+                                        <tr>
+                                            <th>公司</th>
+                                            <th>需求岗位</th>
+                                            <th>每月薪资</th>
+                                            <th>需求专业</th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                        </thead>
+
+                                        <tbody>
+
+                                        <tr th:each="aPosition:${allPosition}">
+                                            <td class="project-title">
+                                                <span  th:text="${aPosition.getGs()}" ></span>
+                                            </td>
+                                            <td class="project-title">
+                                                <span  th:text="${aPosition.getGang()}" ></span>
+                                            </td>
+                                            <td class="project-title">
+                                                <span  th:text="${aPosition.getGongzi()}" ></span>
+                                            </td>
+                                            <td class="project-title">
+                                                <span  th:text="${aPosition.getXzy()}" ></span>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        </body>
+    </div>
+</div>
+</body>
+</html>

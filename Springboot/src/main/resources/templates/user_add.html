@@ -1,0 +1,116 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>管理员添加用户</title>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/css/font-awesome.css}" rel="stylesheet">
+    <link th:href="@{/css/animate.css}" rel="stylesheet">
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+<body  class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+<div id="wrapper">
+    <span th:replace="Component/nav_Component::nav"></span>
+    <div id="page-wrapper" class="gray-bg ">
+        <body  class="row J_mainContent" id="content-main">
+<div class="gray-bg">
+<div >
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>新增用户</h5>
+                    <div class="ibox-tools">
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t" method="post" id="commentForm" th:action="@{/user/userAdd}">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">账号</label>
+                            <div class="col-sm-8">
+                                <input name="usercode" minlength="2" type="text" class="form-control" required=""  id="cname"  aria-required="true" >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">真实姓名：</label>
+                            <div class="col-sm-8">
+                                <input   type="text" class="form-control" name="realname" required="" aria-required="true" >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">邮箱：</label>
+                            <div class="col-sm-8">
+                                <input   type="email" class="form-control" name="emile" required="" aria-required="true" >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">手机号码：</label>
+                            <div class="col-sm-8">
+                                <input   type="text" class="form-control" name="phone" required="" aria-required="true" >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">QQ：</label>
+                            <div class="col-sm-8">
+                                <input   type="text" class="form-control" name="qq" required="" aria-required="true" >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">地址：</label>
+                            <div class="col-sm-8">
+                                <input   type="text" class="form-control" name="adress" required="" aria-required="true" >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">应聘岗位：</label>
+                            <div class="col-sm-8">
+                                <input   type="text" class="form-control" name="position" required="" aria-required="true" >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">专业：</label>
+                            <div class="col-sm-8">
+                                <input   type="text" class="form-control" name="professional" required="" aria-required="true" >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">性别：</label>
+                            <div class="col-sm-8">
+                                <select class="form-control" name="rid">
+                                    <option value="2">女</option>
+                                    <option value="3">男</option>
+                                </select>
+<!--                                <option> 元素都有一个关联的值，当用户选择其中一个选项时，该值将作为表单数据的一部分提交到服务器。-->
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-4 col-sm-offset-3">
+
+                                <button class="btn btn-primary" type="submit">提交</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+</div>
+        </body>
+    </div>
+</div>
+</body>
+
+
+
+</html>

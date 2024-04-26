@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title> 页面</title>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/css/font-awesome.css}" rel="stylesheet">
+    <link th:href="@{/css/animate.css}" rel="stylesheet">
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+<body  class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+<!--fixed-sidebar 表示使用固定的侧边栏，full-height-layout 表示使用满屏高度的布局，gray-bg 是指页面的背景色为灰色-->
+<!--设置为 hidden 意味着当内容溢出容器时，浏览器将隐藏溢出的内容而不显示滚动条。-->
+<div id="wrapper">
+    <span th:replace="Component/nav_Component::nav"></span>
+    <div id="page-wrapper" class="gray-bg">
+        <body>
+        <div class="gray-bg">
+            <div class="middle-box text-center">
+<!--                这个 middle-box 通常用于在页面中居中显示一些内容-->
+                <h2>在线招聘信息管理系统</h2>
+                <h3 class="font-bold">欢迎 <span th:text="${session.user.getRealname()}"></span></h3>
+<!--                font-bold粗体-->
+                <div >
+                    <br>
+                </div>
+            </div>
+        </div>
+        </body>
+    </div>
+</div>
+</body>
+</html>

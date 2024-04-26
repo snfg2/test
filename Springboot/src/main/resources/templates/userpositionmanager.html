@@ -1,0 +1,85 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="utf-8">
+    <title> 修改岗位信息 </title>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/css/font-awesome.css}" rel="stylesheet">
+    <link th:href="@{/css/animate.css}" rel="stylesheet">
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+
+</head>
+<body  class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+<div id="wrapper">
+    <span th:replace="Component/nav_Component::nav"></span>
+    <div id="page-wrapper" class="gray-bg ">
+
+
+        <body  class="row J_mainContent" id="content-main">
+        <div class="gray-bg">
+            <div class="wrapper wrapper-content animated fadeInRight">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="ibox float-e-margins">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h5>修改岗位信息</h5>
+                                <div class="ibox-tools">
+                                </div>
+                            </div>
+                            <div class="ibox-content">
+                                <form class="form-horizontal m-t" method="post" id="commentForm" th:action="@{/position/updatePosition}">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">公司：</label>
+                                        <div class="col-sm-8">
+                                            <input th:value="${positioninfo.getGs()}"  type="text" class="form-control" name="gs" required="" aria-required="true" >
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">岗位：</label>
+                                        <div class="col-sm-8">
+                                            <input th:value="${positioninfo.getGang()}"  type="text" class="form-control" name="gang" required="" aria-required="true" >
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">薪资：</label>
+                                        <div class="col-sm-8">
+                                            <input th:value="${positioninfo.getGongzi()}"  type="text" class="form-control" name="gongzi" required="" aria-required="true" >
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">需求专业：</label>
+                                        <div class="col-sm-8">
+                                            <input th:value="${positioninfo.getXzy()}"  type="text" class="form-control" name="xzy" required="" aria-required="true" >
+                                        </div>
+                                    </div>
+                                    <input type="hidden" th:value="${positioninfo.getId()}" name="id">
+                                    <div class="form-group">
+                                        <div class="col-sm-4 col-sm-offset-3">
+
+                                            <button class="btn btn-primary" type="submit">提交</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        </body>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="utf-8">
+    <title> - 登录</title>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/css/font-awesome.css}" rel="stylesheet">
+    <link th:href="@{/css/animate.css}" rel="stylesheet">
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+
+<body class="gray-bg">
+<!--<body class="gray-bg" style="background: url(/static/poto/hhh.png);background-size:100%;">-->
+
+    <div class="middle-box text-center loginscreen">
+        <div>
+            <div>
+
+                <h1 class="logo-name">Z</h1>
+
+            </div>
+            <h3>在线招聘管理系统</h3>
+
+            <form class="m-t" method="post" role="form" th:action="@{/login}">
+                <div class="form-group"  th:if="${msg!=null}" >
+<!--           HTML中的class属性，用于为元素指定一个或多个样式类。在这里，它被应用于一个div元素-->
+                    <p style="color: red" th:text="${msg}"></p>
+                </div>
+                <div class="form-group">
+                    <input name="usercode" type="text" class="form-control" placeholder="账号" required="">
+                     <!-- name="usercode"：name 属性用于在提交表单时标识表单字段。在这里，它被设置为 "usercode" -->
+                     <!--type="text"：指定输入字段为单行文本输入 用于使输入字段的样式与其他表单元素保持一致 -->
+                </div>
+                <div class="form-group">
+                    <input name="password" type="password" class="form-control" placeholder="密码" required="">
+                </div>
+                <button type="submit" class="btn btn-primary block full-width m-b">登 录</button>
+<!--                这个按钮在样式上是一个蓝色的、宽度充满父容器、带有下边距的提交按钮-->
+            </form>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

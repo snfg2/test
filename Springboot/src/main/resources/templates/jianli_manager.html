@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <title>简历信息管理</title>
+
+    <link rel="shortcut icon" th:href="favicon.ico">
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/css/font-awesome.css}" rel="stylesheet">
+    <link th:href="@{/css/animate.css}" rel="stylesheet">
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+<body  class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+<div id="wrapper">
+    <span th:replace="Component/nav_Component::nav"></span>
+    <div id="page-wrapper" class="gray-bg ">
+        <body  class="row J_mainContent" id="content-main">
+        <div class="gray-bg">
+
+            <div >
+                <div class="row">
+                    <div class="col-sm-12">
+
+                        <div class="ibox">
+                            <div class="ibox-title">
+                            </div>
+                            <div class="ibox-content">
+                                <div class="row m-b-sm m-t-sm">
+                                    <div class="row col-md-12">
+                                        <div class="col-md-2">
+                                            <a th:href="@{/jianli/toJianliManager}" type="button" id="loading-example-btn" class="btn btn-white btn-sm"><i class="fa fa-refresh"></i>&nbsp;刷新</a>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <a th:href="@{/jianli/toAddJianli}" type="button"  class="btn btn-white btn-sm"><i class="fa fa-plus"></i>&nbsp;新增用户简历</a>
+                                        </div>
+                                    </div>
+                                    <div class="row col-md-12" >&nbsp;</div>
+                                    <div class="row col-md-12">
+                                        <form th:action="@{/jianli/JianliSelect}">
+                                            <div class="col-md-12">
+
+                                                <div class="input-group col-md-3">
+                                                    <input  type="text" name="position" placeholder="请输入公司" class="input-sm form-control">
+                                                </div>
+
+                                                <div class="input-group col-md-3">
+                                                  <span class="input-group-btn">
+                                                <button type="submit" class="btn btn-sm btn-primary"> 搜索</button> </span>
+                                                </div>
+
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                </div>
+
+                                <div class="project-list">
+
+                                    <table class="table table-hover">
+
+                                        <thead>
+                                        <tr>
+                                            <th>姓名</th>
+                                            <th>年龄</th>
+                                            <th>性别</th>
+                                            <th>主修专业</th>
+                                            <th>奖项</th>
+                                            <th>应聘公司</th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                        </thead>
+
+                                        <tbody>
+
+                                        <tr th:each="aJianli:${allJianli}">
+                                            <td class="project-title">
+                                                <span  th:text="${aJianli.getRname()}" ></span>
+                                            </td>
+                                            <td class="project-title">
+                                                <span  th:text="${aJianli.getAge()}" ></span>
+                                            </td>
+                                            <td class="project-title">
+                                                <span  th:text="${aJianli.getSex()}" ></span>
+                                            </td>
+                                            <td class="project-title">
+                                                <span  th:text="${aJianli.getMajor()}" ></span>
+                                            </td>
+                                            <td class="project-title">
+                                                <span  th:text="${aJianli.getAward()}" ></span>
+                                            </td>
+                                            <td class="project-title">
+                                                <span  th:text="${aJianli.getPosition()}" ></span>
+                                            </td>
+                                            <td class="project-actions">
+                                                <a th:href="@{'/jianli/toSetJianli/'+${aJianli.getId()}}" class="btn btn-white btn-sm"><i class="fa fa-wrench"></i> 修改</a>
+                                            </td>
+                                            <td class="project-actions">
+                                                <a th:href="@{'/jianli/deleteJianli/'+${aJianli.getId()}}" class="btn btn-white btn-sm"><i class="fa fa-trash"></i> 删除 </a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        </body>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<div class="navbar-default navbar-static-side" role="navigation" th:fragment="nav">
+    <div class="nav-close">vvv<i class="fa fa-times-circle"></i>
+    </div>
+    <div class="sidebar-collapse">
+        <ul class="nav" id="side-menu">
+            <li class="line dk"></li>
+            <li th:if="${session.user.getRid()==1}">
+                <!--                -->
+                <a > <span class="nav-label">用户管理 </span></a>
+                <ul class="nav nav-second-level">
+                    <li><a class="J_menuItem" th:href="@{/user/toUserManager}">用户信息管理</a>
+                    </li>
+                    <li><a class="J_menuItem" th:href="@{/user/toAddUser}">添加用户信息</a>
+                    </li>
+                </ul>
+            </li >
+            <li th:if="${session.user.getRid()==1}">
+                <a > <span class="nav-label">招聘信息</span></a>
+                <ul class="nav nav-second-level">
+                    <li><a class="J_menuItem" th:href="@{/position/toPositionManager}">招聘信息管理</a>
+                    </li>
+
+                </ul>
+            </li>
+
+            <li th:if="${session.user.getRid()==1}">
+                <a > <span class="nav-label">简历信息</span></a>
+                <ul class="nav nav-second-level">
+                    <li><a class="J_menuItem" th:href="@{/jianli/toJianliManager}">简历信息管理</a>
+                    </li>
+
+                </ul>
+            </li>
+
+            <li th:if="${session.user.getRid()!=1}">
+                <a > <span class="nav-label">个人信息</span></a>
+                <ul class="nav nav-second-level">
+                    <li><a class="J_menuItem" th:href="@{'/user/toSetUser/'+${session.user.getUid()}}">个人招聘信息管理</a>
+                    <li><a class="J_menuItem" th:href="@{'/jianli/toSetJianli1/'+${session.user.getRealname()}}">个人简历信息管理</a>
+                    <li><a class="J_menuItem" th:href="@{'/jianli/toAddJianli/'}">新增简历信息</a>
+                    <li><a class="J_menuItem" th:href="@{/toPWSet}">修改密码</a>
+                    </li>
+
+                </ul>
+            </li>
+            </li>
+            </li>
+
+            <li th:if="${session.user.getRid()==1}">
+                <a > <span class="nav-label">个人信息</span></a>
+                <ul class="nav nav-second-level">
+                    <li><a class="J_menuItem" th:href="@{/toPWSet}">修改密码</a>
+                    </li>
+
+                </ul>
+            <li><a class="J_menuItem" th:href="@{/position/toPositionManager1}">查询岗位信息</a>
+            </li>
+            </li>
+            </li>
+
+            <li>
+                <a > <span class="nav-label">操作</span></a>
+                <ul class="nav nav-second-level">
+
+                    <li><a class="J_menuItem" th:href="@{/toindex}">返回首页</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+</html>
